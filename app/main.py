@@ -34,8 +34,8 @@ def shop_trip() -> None:
 
         customer.location = cheapest_shop.location
         date = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-        print(f"Date: {date}"
-              f"Thanks, {customer.name}, for your purchase!"
+        print(f"Date: {date}\n"
+              f"Thanks, {customer.name}, for your purchase!\n"
               "You have bought:")
         total_price = 0
         for product, amount in customer.product_cart.items():
@@ -44,10 +44,10 @@ def shop_trip() -> None:
                          .rstrip("0").rstrip("."))
             total_price += price_for_product
             print(f"{amount} {product}s for {str_price} dollars")
-        print(f"Total cost is {total_price} dollars"
+        print(f"Total cost is {total_price} dollars\n"
               "See you again!\n")
 
         customer.location = customer.home
         customer.money -= expenses[cheapest_shop]
-        print(f"{customer.name} rides home"
+        print(f"{customer.name} rides home\n"
               f"{customer.name} now has {customer.money} dollars\n")
